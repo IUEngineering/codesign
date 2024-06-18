@@ -67,8 +67,8 @@ int main(void)
 	PMIC.CTRL     |= PMIC_LOLVLEN_bm;
 	sei();
 		
-    while (1) 
-    {
+    while (1) {
+		asm ("nop");
     }
 };
 

@@ -1,0 +1,11 @@
+# Ignore .vscode settings folders
+**/.vscode/**
+
+# Ignore C compile bs
+*.elf
+*.hex
+*.o
+
+# Ignore Compiled folders
+/bin*
+/obj*
