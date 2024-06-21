@@ -39,9 +39,9 @@ int main(void) {
     }
     printf("\n};");
     
-    while (1 {
+    while (1) {
 		
-	});
+	};
 }
 
 ISR(TCD0_OVF_vect) {
