@@ -3,17 +3,13 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
-#define _USE_MATH_DEFINES
 #include <math.h>
 #include <stddef.h>
 
 #include "clock.h"
 #include "sine.h"
 
-#define GEN_NEW_TABLE
-#ifdef GEN_NEW_TABLE
 #include "serialF0.h"
-#endif
 
 #define VCC         3.30
 #define DAC_MAX     4096
@@ -30,7 +26,7 @@ volatile int16_t i = 0;
 int main(void) {
 
     init_clock();
-    init_stream(F_CPU);
+    init_stream(F_CPU, 152000);
     
     initTimer();
     initDAC();
@@ -38,14 +34,14 @@ int main(void) {
     PMIC.CTRL |= PMIC_LOLVLEN_bm;
     sei();
 
-    printf("uint16_t lookupTable[] = {\n\t");
     for (uint32_t i = 0; i < SAMPLES; i++) {
         lookupTable[i] = (uint16_t)(OFFSET + AMPLITUDE * sin(2.0f * M_PI * i / SAMPLES));
-        printf("%d,", lookupTable[i]);
     }
     printf("\n};");
     
-    while (1);
+    while (1 {
+		
+	});
 }
 
 ISR(TCD0_OVF_vect) {
