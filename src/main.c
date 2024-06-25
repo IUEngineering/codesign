@@ -7,7 +7,6 @@
 #include <stddef.h>
 
 #include "clock.h"
-#include "sine.h"
 
 #include "serialF0.h"
 
@@ -22,7 +21,8 @@ void initTimer(void);
 void initDAC(void);
 
 volatile int16_t i = 0;		
-
+uint16_t lookupTable[] = {};
+ 
 int main(void) {
 
     init_clock();
@@ -79,7 +79,6 @@ void initDAC(void) {
 };
 
 void initTimer(void){
-    
     PORTD.DIRSET  = PIN1_bm;
 
     TCD0.CTRLB    = TC_WGMODE_SINGLESLOPE_gc;
